@@ -9,8 +9,6 @@ MAINTAINER xyzzyx
 # set python to use utf-8 rather than ascii.
 ENV PYTHONIOENCODING="UTF-8"
 
-COPY patches/ /defaults/patches/
-
 RUN \
     echo "**** install build packages ****" && \
     apk add --no-cache --virtual=build-dependencies \
