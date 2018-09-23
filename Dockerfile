@@ -49,7 +49,6 @@ RUN \
     echo "**** install limnoria ****" && \
     python3 ./setup.py install && \
     cd /usr/lib/python3.6/site-packages/supybot && \
-    patch -Np1 -i /defaults/patches/ident.patch && \
     echo "**** clean up ****" && \
     apk del --purge \
         build-dependencies && \
