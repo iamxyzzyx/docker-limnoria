@@ -1,0 +1,33 @@
+#!/usr/bin/with-contenv bash
+
+chown -R abc:abc /defaults
+
+
+#### CREATE DIRECTORIES AND FILES ####
+
+for d in backup conf data data/tmp data/web logs plugins
+do
+  if [ ! -d /config/${d} ]; then
+    mkdir -p /config/${d}
+  fi
+done
+
+for c in channels ignores userdata users
+do
+  if [ ! -e /config/conf/${c}.conf ]; then
+    touch /config/conf/${c}.conf
+  fi
+done
+
+
+# set permissions
+chown -R abc:abc \
+	/config \
+
+
+
+
+
+
+
+
